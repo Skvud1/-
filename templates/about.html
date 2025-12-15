@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://via.placeholder.com/300x300/ff073a/ffffff?text=Автор" 
+             alt="Фото автора проекта" 
+             class="img-fluid rounded-circle shadow">
+    </div>
+    <div class="col-md-8">
+        <h1>Об авторе</h1>
+        <p><strong>Имя:</strong> Алексей Петров</p>
+        <p><strong>Роль:</strong> Студент факультета веб-разработки, фанат русского рэпа.</p>
+        
+        <h4 class="mt-4">О проекте</h4>
+        <p>Этот сайт создан в рамках курсовой работы по веб-разработке на Flask. Цель — показать эволюцию русского рэпа с 2010-х годов до наших дней через анализ ключевых фигур.</p>
+        
+        <h4>Контакты</h4>
+        <ul>
+            <li>Email: student@example.com</li>
+            <li>GitHub: <a href="https://github.com/student" target="_blank">github.com/student</a></li>
+            <li>VK: <a href="https://vk.com/student" target="_blank">vk.com/student</a></li>
+        </ul>
+        
+        <a href="/glossary" class="btn btn-rap mt-3">Перейти к глоссарию</a>
+    </div>
+</div>
+{% endblock %}

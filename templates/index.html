@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row align-items-center mb-5">
+    <div class="col-md-6">
+        <h1 class="main-title">Русский рэп: от 2010-х к новой эре</h1>
+        <p class="lead">Анализ ключевых фигур, стилей и трендов русского хип-хопа последнего десятилетия.</p>
+    </div>
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/main.jpg') }}" 
+             alt="Коллаж русских рэп-исполнителей" 
+             class="img-fluid rounded shadow">
+        <p class="img-caption">Коллаж с Oxxxymiron, FACE, Славой КПСС и другими</p>
+    </div>
+</div>
+
+<!-- Bootstrap Carousel -->
+<h2 class="mb-4">Эволюция звучания</h2>
+<div id="rapCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="p-5 bg-dark rounded text-center">
+                <h3>2010-2013: Андеграунд и интернет</h3>
+                <p>Появление YouTube-рэпа, первые баттлы, рост независимых лейблов.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="p-5 bg-dark rounded text-center">
+                <h3>2014-2017: Мейнстрим и политика</h3>
+                <p>Выход крупных альбомов, баттл Oxxxymiron vs Слава КПСС, рост социального рэпа.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="p-5 bg-dark rounded text-center">
+                <h3>2018-н.в.: Эксперименты и жанровый синтез</h3>
+                <p>Трап, эмo-рэп, альтернатива, слияние с поп-музыкой.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#rapCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#rapCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!-- Карточки исполнителей -->
+<h2 class="mb-4">Ключевые исполнители</h2>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="artist-card p-4">
+            <img src="{{ url_for('static', filename='images/oxxxy.jpg') }}" 
+                 alt="Oxxxymiron на концерте" 
+                 class="artist-img rounded">
+            <h3 class="artist-name mt-3">Oxxxymiron</h3>
+            <p>Мастер сложных рифм и концептуальных альбомов. Его альбом «Горгород» (2015) стал культовым.</p>
+            <a href="/oxxxy" class="btn btn-rap">Подробнее</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="artist-card p-4">
+            <img src="{{ url_for('static', filename='images/face.jpg') }}" 
+                 alt="FACE в студии" 
+                 class="artist-img rounded">
+            <h3 class="artist-name mt-3">FACE</h3>
+            <p>Пионер русского трэпа и эмo-рэпа. Известен альбомами «Путь к себе» и «12».</p>
+            <a href="/face" class="btn btn-rap">Подробнее</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="artist-card p-4">
+            <img src="{{ url_for('static', filename='images/slava.jpg') }}" 
+                 alt="Слава КПСС на баттле" 
+                 class="artist-img rounded">
+            <h3 class="artist-name mt-3">Слава КПСС</h3>
+            <p>Экспериментатор, известный провокационными текстами и проектами вроде «Записки чернорабочего».</p>
+            <a href="/slava" class="btn btn-rap">Подробнее</a>
+        </div>
+    </div>
+</div>
+
+<!-- Ссылки на внешние ресурсы -->
+<div class="mt-5 p-4 bg-dark rounded">
+    <h4>Дополнительные ресурсы:</h4>
+    <ul>
+        <li><a href="https://www.rap.ru/" target="_blank" class="text-light">Rap.ru — главный портал о рэпе</a></li>
+        <li><a href="https://www.youtube.com/c/ VersusBattle" target="_blank" class="text-light">Versus Battle — архив баттлов</a></li>
+        <li><a href="https://band.link/" target="_blank" class="text-light">BandLink — музыка платформы</a></li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+/* Общие стили темы "Русский рэп" */
+:root {
+    --rap-dark: #0c0c0c;
+    --rap-red: #ff073a;
+    --rap-gray: #1a1a1a;
+    --rap-light: #e0e0e0;
+    --rap-gold: #ffd700;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--rap-dark);
+    color: var(--rap-light);
+    line-height: 1.6;
+}
+
+/* Навигация с подсветкой активной страницы */
+.navbar-rap {
+    background-color: var(--rap-gray) !important;
+    border-bottom: 2px solid var(--rap-red);
+}
+
+.nav-link {
+    color: var(--rap-light) !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--rap-red) !important;
+}
+
+/* Главный заголовок */
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--rap-red), var(--rap-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Карточки исполнителей */
+.artist-card {
+    background: var(--rap-gray);
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 7, 58, 0.2);
+}
+
+.artist-img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 3px solid var(--rap-red);
+}
+
+.artist-name {
+    color: var(--rap-gold);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Подписи к картинкам */
+.img-caption {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Глоссарий */
+.glossary-term {
+    color: var(--rap-red);
+    font-weight: bold;
+    border-left: 4px solid var(--rap-red);
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+/* Футер */
+.footer-rap {
+    background-color: var(--rap-gray);
+    border-top: 1px solid #333;
+    color: #888;
+    padding: 30px 0;
+}
+
+/* Кнопки */
+.btn-rap {
+    background-color: var(--rap-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-rap:hover {
+    background-color: #cc0030;
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+}

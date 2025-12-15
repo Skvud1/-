@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mb-4">Oxxxymiron</h1>
+        <p><strong>Настоящее имя:</strong> Мирон Фёдоров</p>
+        <p><strong>Годы активности:</strong> 2008 — н.в.</p>
+        
+        <h4 class="mt-4">Биография</h4>
+        <p>Oxxxymiron (Мирон Фёдоров) — один из самых влиятельных рэп-исполнителей русскоязычного пространства. Известен сложными многослойными текстами, литературными отсылками и концептуальными альбомами.</p>
+        
+        <h4>Ключевые альбомы</h4>
+        <ul>
+            <li><strong>«Вечный жид» (2011)</strong> — дебютный микс, принёсший известность.</li>
+            <li><strong>«Горгород» (2015)</strong> — концептуальный альбом-антиутопия.</li>
+            <li><strong>«Красота и Уродство» (2021)</strong> — двойной альбом, исследующий противоречия современности.</li>
+        </ul>
+        
+        <h4>Интересные факты</h4>
+        <p>Мирон учился в Оксфорде, свободно говорит на английском и немецком. Его баттл против <a href="/slava">Славы КПСС</a> на Versus стал самым просматриваемым в истории русских рэп-баттлов.</p>
+        
+        <a href="https://genius.com/artists/Oxxxymiron" target="_blank" class="btn btn-rap mt-3">Тексты на Genius</a>
+    </div>
+    <div class="col-md-4">
+        <img src="{{ url_for('static', filename='images/oxxxy.jpg') }}" 
+             alt="Oxxxymiron на выступлении" 
+             class="img-fluid rounded shadow mb-3">
+        <p class="img-caption">Oxxxymiron на концерте в Москве, 2022</p>
+        
+        <!-- Bootstrap Modal -->
+        <button type="button" class="btn btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#oxxxyModal">
+            Быстрый факт
+        </button>
+        
+        <div class="modal fade" id="oxxxyModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Знаете ли вы?</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        Oxxxymiron в 2017 году организовал и спродюсировал баттл-лигу «Versus», которая революционизировала русскую баттл-сцену.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
