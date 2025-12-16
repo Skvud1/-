@@ -1,39 +1,87 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row align-items-center mb-5">
+<!-- Герой-секция -->
+<div class="row align-items-center mb-5 fade-in">
     <div class="col-md-6">
-        <h1 class="main-title">Русский рэп: от 2010-х к новой эре</h1>
-        <p class="lead">Анализ ключевых фигур, стилей и трендов русского хип-хопа последнего десятилетия.</p>
+        <h1 class="main-title">Русский рэп:<br>От 2010-х к новой эре</h1>
+        <p class="lead fs-4 mb-4">Анализ ключевых фигур, стилей и трендов русского хип-хопа последнего десятилетия. От андеграунда к мейнстриму.</p>
+        <div class="d-flex gap-3">
+            <a href="#artists" class="btn btn-rap">Исполнители</a>
+            <a href="#timeline" class="btn btn-outline-light">Хронология</a>
+            <a href="/glossary" class="btn btn-outline-light">Глоссарий</a>
+        </div>
     </div>
     <div class="col-md-6">
-        <img src="{{ url_for('static', filename='images/main.jpg') }}" 
-             alt="Коллаж русских рэп-исполнителей" 
-             class="img-fluid rounded shadow">
-        <p class="img-caption">Коллаж с Oxxxymiron, FACE, Славой КПСС и другими</p>
+        <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Концерт русского рэп-исполнителя, толпа с телефонами" 
+                 class="img-fluid rounded-4 shadow-lg" 
+                 style="border: 3px solid var(--rap-red);">
+            <div class="position-absolute bottom-0 start-0 end-0 p-3" 
+                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                <p class="img-caption mb-0">🔥 Концертная атмосфера русского рэпа 2020-х</p>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Bootstrap Carousel -->
-<h2 class="mb-4">Эволюция звучания</h2>
-<div id="rapCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+<!-- Быстрая навигация -->
+<div class="row mb-5 fade-in">
+    <div class="col-12">
+        <h2 class="text-center mb-4" style="color: var(--rap-yellow);">Быстрый переход</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="/oxxxy" class="btn" style="background: linear-gradient(135deg, #FF0033, #FF6600); color: white; padding: 12px 25px; border-radius: 25px; font-weight: 600;">
+                <i class="bi bi-mic-fill me-2"></i>Oxxxymiron
+            </a>
+            <a href="/face" class="btn" style="background: linear-gradient(135deg, #FF6600, #FFCC00); color: black; padding: 12px 25px; border-radius: 25px; font-weight: 600;">
+                <i class="bi bi-vinyl-fill me-2"></i>FACE
+            </a>
+            <a href="/slava" class="btn" style="background: linear-gradient(135deg, #9933FF, #3399FF); color: white; padding: 12px 25px; border-radius: 25px; font-weight: 600;">
+                <i class="bi bi-lightning-charge-fill me-2"></i>Слава КПСС
+            </a>
+            <a href="/glossary" class="btn" style="background: linear-gradient(135deg, #00CC66, #3399FF); color: white; padding: 12px 25px; border-radius: 25px; font-weight: 600;">
+                <i class="bi bi-book-fill me-2"></i>Термины
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Таймлайн/Карусель -->
+<h2 id="timeline" class="mb-4" style="color: var(--rap-purple);">🎤 Эволюция звучания</h2>
+<div id="rapCarousel" class="carousel slide mb-5 fade-in" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="p-5 bg-dark rounded text-center">
-                <h3>2010-2013: Андеграунд и интернет</h3>
-                <p>Появление YouTube-рэпа, первые баттлы, рост независимых лейблов.</p>
+            <div class="p-5 rounded-4 text-center">
+                <h3 class="display-5 fw-bold mb-3">2010-2013: Андеграунд и интернет</h3>
+                <p class="fs-5">Появление YouTube-рэпа, первые баттлы, рост независимых лейблов. Зарождение новой волны.</p>
+                <div class="mt-4">
+                    <span class="badge bg-dark me-2">Noize MC</span>
+                    <span class="badge bg-dark me-2">Loc-Dog</span>
+                    <span class="badge bg-dark">Каста</span>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="p-5 bg-dark rounded text-center">
-                <h3>2014-2017: Мейнстрим и политика</h3>
-                <p>Выход крупных альбомов, баттл Oxxxymiron vs Слава КПСС, рост социального рэпа.</p>
+            <div class="p-5 rounded-4 text-center">
+                <h3 class="display-5 fw-bold mb-3">2014-2017: Мейнстрим и политика</h3>
+                <p class="fs-5">Выход крупных альбомов, баттл Oxxxymiron vs Слава КПСС, рост социального рэпа, прорыв в мейнстрим.</p>
+                <div class="mt-4">
+                    <span class="badge bg-dark me-2">Versus Battle</span>
+                    <span class="badge bg-dark me-2">Горгород</span>
+                    <span class="badge bg-dark">#SLOVOSPB</span>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="p-5 bg-dark rounded text-center">
-                <h3>2018-н.в.: Эксперименты и жанровый синтез</h3>
-                <p>Трап, эмo-рэп, альтернатива, слияние с поп-музыкой.</p>
+            <div class="p-5 rounded-4 text-center">
+                <h3 class="display-5 fw-bold mb-3">2018-н.в.: Эксперименты</h3>
+                <p class="fs-5">Трап, эмo-рэп, альтернатива, слияние с поп-музыкой. Эра экспериментов и жанрового синтеза.</p>
+                <div class="mt-4">
+                    <span class="badge bg-dark me-2">Morgenshtern</span>
+                    <span class="badge bg-dark me-2">Эмо-рэп</span>
+                    <span class="badge bg-dark">T-Fest</span>
+                </div>
             </div>
         </div>
     </div>
@@ -45,48 +93,116 @@
     </button>
 </div>
 
-<!-- Карточки исполнителей -->
-<h2 class="mb-4">Ключевые исполнители</h2>
-<div class="row g-4">
+<!-- Ключевые исполнители -->
+<h2 id="artists" class="mb-4" style="color: var(--rap-green);">🎵 Ключевые исполнители эпохи</h2>
+<div class="row g-4 fade-in">
     <div class="col-md-4">
-        <div class="artist-card p-4">
-            <img src="{{ url_for('static', filename='images/oxxxy.jpg') }}" 
-                 alt="Oxxxymiron на концерте" 
-                 class="artist-img rounded">
-            <h3 class="artist-name mt-3">Oxxxymiron</h3>
-            <p>Мастер сложных рифм и концептуальных альбомов. Его альбом «Горгород» (2015) стал культовым.</p>
-            <a href="/oxxxy" class="btn btn-rap">Подробнее</a>
+        <div class="artist-card p-4 h-100">
+            <div class="position-relative overflow-hidden rounded-3 mb-4">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Oxxxymiron читает рэп на сцене, динамичное выступление" 
+                     class="artist-img">
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-danger fs-6">2010-е</span>
+                </div>
+            </div>
+            <h3 class="artist-name">Oxxxymiron</h3>
+            <p class="mb-3">Мирон Фёдоров — мастер сложных рифм и концептуальных альбомов. Его альбом «Горгород» (2015) стал культурным феноменом.</p>
+            <div class="mb-3">
+                <span class="badge bg-dark me-2">Лиризм</span>
+                <span class="badge bg-dark me-2">Баттлы</span>
+                <span class="badge bg-dark">Концепт</span>
+            </div>
+            <a href="/oxxxy" class="btn btn-rap w-100">Открыть досье</a>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="artist-card p-4">
-            <img src="{{ url_for('static', filename='images/face.jpg') }}" 
-                 alt="FACE в студии" 
-                 class="artist-img rounded">
-            <h3 class="artist-name mt-3">FACE</h3>
-            <p>Пионер русского трэпа и эмo-рэпа. Известен альбомами «Путь к себе» и «12».</p>
-            <a href="/face" class="btn btn-rap">Подробнее</a>
+        <div class="artist-card p-4 h-100">
+            <div class="position-relative overflow-hidden rounded-3 mb-4">
+                <img src="https://images.unsplash.com/photo-1519281682544-5f37c4b14c47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="FACE в студии звукозаписи, работа над треком" 
+                     class="artist-img">
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-warning text-dark fs-6">Трап-волна</span>
+                </div>
+            </div>
+            <h3 class="artist-name" style="background: linear-gradient(135deg, #FF6600, #FFCC00); -webkit-background-clip: text;">FACE</h3>
+            <p class="mb-3">Пионер русского трэпа и эмo-рэпа. Известен альбомами «Путь к себе» и «12». Изменил звучание русского хип-хопа.</p>
+            <div class="mb-3">
+                <span class="badge bg-dark me-2">Трап</span>
+                <span class="badge bg-dark me-2">Эмо-рэп</span>
+                <span class="badge bg-dark">Эксперименты</span>
+            </div>
+            <a href="/face" class="btn btn-rap w-100" style="background: linear-gradient(135deg, #FF6600, #FFCC00);">Исследовать</a>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="artist-card p-4">
-            <img src="{{ url_for('static', filename='images/slava.jpg') }}" 
-                 alt="Слава КПСС на баттле" 
-                 class="artist-img rounded">
-            <h3 class="artist-name mt-3">Слава КПСС</h3>
-            <p>Экспериментатор, известный провокационными текстами и проектами вроде «Записки чернорабочего».</p>
-            <a href="/slava" class="btn btn-rap">Подробнее</a>
+        <div class="artist-card p-4 h-100">
+            <div class="position-relative overflow-hidden rounded-3 mb-4">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Слава КПСС на баттле, эмоциональное выступление" 
+                     class="artist-img">
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-primary fs-6">Авангард</span>
+                </div>
+            </div>
+            <h3 class="artist-name" style="background: linear-gradient(135deg, #9933FF, #3399FF); -webkit-background-clip: text;">Слава КПСС</h3>
+            <p class="mb-3">Экспериментатор, известный провокационными текстами и проектами вроде «Записки чернорабочего». Постоянно меняет амплуа.</p>
+            <div class="mb-3">
+                <span class="badge bg-dark me-2">Эксперимент</span>
+                <span class="badge bg-dark me-2">Провокация</span>
+                <span class="badge bg-dark">Альтернатива</span>
+            </div>
+            <a href="/slava" class="btn btn-rap w-100" style="background: linear-gradient(135deg, #9933FF, #3399FF);">Узнать больше</a>
         </div>
     </div>
 </div>
 
-<!-- Ссылки на внешние ресурсы -->
-<div class="mt-5 p-4 bg-dark rounded">
-    <h4>Дополнительные ресурсы:</h4>
-    <ul>
-        <li><a href="https://www.rap.ru/" target="_blank" class="text-light">Rap.ru — главный портал о рэпе</a></li>
-        <li><a href="https://www.youtube.com/c/ VersusBattle" target="_blank" class="text-light">Versus Battle — архив баттлов</a></li>
-        <li><a href="https://band.link/" target="_blank" class="text-light">BandLink — музыка платформы</a></li>
-    </ul>
+<!-- Внешние ресурсы -->
+<div class="mt-5 p-5 rounded-4 fade-in" style="background: linear-gradient(135deg, rgba(255,0,51,0.1), rgba(153,51,255,0.1)); border: 2px solid var(--rap-red);">
+    <h3 class="mb-4" style="color: var(--rap-blue);">🔗 Дополнительные ресурсы для погружения</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="p-3 rounded-3 h-100" style="background: rgba(255,255,255,0.05);">
+                <h5>📰 Новости и аналитика</h5>
+                <a href="https://www.rap.ru/" target="_blank" class="d-block text-light mb-2">Rap.ru — главный портал</a>
+                <a href="https://the-flow.ru/" target="_blank" class="d-block text-light">The Flow — новости хип-хопа</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="p-3 rounded-3 h-100" style="background: rgba(255,255,255,0.05);">
+                <h5>🎥 Видео и баттлы</h5>
+                <a href="https://www.youtube.com/c/VersusBattle" target="_blank" class="d-block text-light mb-2">Versus Battle — архив баттлов</a>
+                <a href="https://www.youtube.com/c/SLOVOSPB" target="_blank" class="d-block text-light">#SLOVOSPB — концерты</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="p-3 rounded-3 h-100" style="background: rgba(255,255,255,0.05);">
+                <h5>🎵 Музыка и тексты</h5>
+                <a href="https://genius.com/" target="_blank" class="d-block text-light mb-2">Genius — тексты песен</a>
+                <a href="https://band.link/" target="_blank" class="d-block text-light">BandLink — все платформы</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Статистика -->
+<div class="row mt-5 text-center fade-in">
+    <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: var(--rap-red);">10+</div>
+        <p>лет эволюции</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: var(--rap-orange);">50+</div>
+        <p>ключевых артистов</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: var(--rap-purple);">1000+</div>
+        <p>значимых треков</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: var(--rap-blue);">∞</div>
+        <p>возможностей развития</p>
+    </div>
 </div>
 {% endblock %}
